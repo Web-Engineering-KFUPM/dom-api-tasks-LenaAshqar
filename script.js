@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
     Use the OpenWeatherMap API to display live weather data.
 
     🌍 API Link:
-    https://api.openweathermap.org/data/2.5/weather?q=Dammam&appid=API_KEY=metric
+    https://api.openweathermap.org/data/2.5/weather?q=Dammam&appid=API_KEY&units=metric
 
     ⚠️ Replace YOUR_API_KEY with your actual API key from:
     https://openweathermap.org/api
@@ -127,13 +127,13 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(function (data) {
              const temperature = document.getElementById("t4-temp");
-             temperature.textContent = data.main.temp;
+             temperature.textContent = data.main.temp + " °C";
 
             const humidity = document.getElementById("t4-hum");
-            humidity.textContent = data.main.humidity;
+            humidity.textContent = data.main.humidity + " %";
 
             const wind = document.getElementById("t4-wind");
-            wind.textContent = data.wind.speed;
+            wind.textContent = data.wind.speed + " m/s";
         })
         .catch(function (err) {
             console.log("API Error: ", err);
