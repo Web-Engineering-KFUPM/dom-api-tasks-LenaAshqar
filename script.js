@@ -5,11 +5,11 @@ All tasks in one file (script.js)
 =======================================
 */
 
-/*  
+/*
 =======================================
 TODO1: Welcome Board
 ---------------------------------------
-When the page loads, display a welcome message 
+When the page loads, display a welcome message
 inside the <p> element with id="t1-msg".
 
 ✅ Task:
@@ -19,14 +19,14 @@ inside the <p> element with id="t1-msg".
 💡 Hint:
 document.getElementById("t1-msg").innerHTML = "Hello, World!";
 */
- const p = document.getElementById("t1-msg")
-p.textContent = "Hello, World!"
-/*  
+const p1 = document.getElementById("t1-msg");
+p1.textContent = "Hello, World!";
+/*
 =======================================
 TODO2: Interaction Corner
 ---------------------------------------
 There is a button with id="t2-btn".
-When the button is clicked, change the text inside 
+When the button is clicked, change the text inside
 the <p> with id="t2-status" to:
     "You clicked the button!"
 
@@ -40,9 +40,12 @@ button.addEventListener("click", function () {
     // change text here
 });
 */
- 
-
-/*  
+button = document.getElementById("t2-btn");
+button.addEventListener("click", () => {
+    const p2 = document.getElementById("t2-status")
+    p2.textContent = "You clicked the button!"
+});
+/*
 =======================================
 TODO3: Inspiring Quote Board
 ---------------------------------------
@@ -68,9 +71,9 @@ Use:
 data.content   // the quote text
 data.author    // the author
 */
- 
 
-/*  
+
+/*
 =======================================
 TODO4: Dammam Weather Now
 ---------------------------------------
