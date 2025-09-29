@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // change text here
     });
     */
-    button = document.getElementById("t2-btn");
+    const button = document.getElementById("t2-btn");
     button.addEventListener("click", () => {
         const p2 = document.getElementById("t2-status")
         p2.textContent = "You clicked the button!"
@@ -116,4 +116,27 @@ document.addEventListener("DOMContentLoaded", function () {
     data.main.humidity  → humidity (%)
     data.wind.speed     → wind speed (m/s)
     */
+    const button3 = document.getElementById("t4-loadWx");
+    button3.addEventListener("click", () => {
+        fetch("https://api.openweathermap.org/data/2.5/weather?q=Dammam&appid=d51f2f00c3b137ccfd135bd8f9dd50aa&units=metric")
+        .then(function (response) {
+            if (!response.ok) {
+                throw new Error("HTTP" + response.status);
+            }
+            return response.json();
+        })
+        .then(function (data) {
+             const temperature = document.getElementById("t4-temp");
+             temperature.textContent = data.main.temp;
+
+            const humidity = document.getElementById("t4-hum");
+            humidity.textContent = data.main.humidity;
+
+            const wind = document.getElementById("t4-wind");
+            wind.textContent = data.wind.speed;
+        })
+        .catch(function (err) {
+            console.log("API Error: ", err);
+        })
+    })
 });
